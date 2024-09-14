@@ -3,8 +3,9 @@
 # Projeto de Organização de Computadores: Entrada/Saída (I/O)
 
 ## Descrição
-<summary>descrição</summary>
-Este projeto aborda os conceitos de Entrada/Saída (I/O) no contexto da Organização de Computadores. Focamos no desenvolvimento e simulação de um sistema que demonstra a integração entre sensores e dispositivos de saída, mostrando como a comunicação entre hardware e software é essencial para sistemas computacionais modernos.
+
+Este projeto aborda os conceitos de Entrada/Saída (I/O) no contexto da Organização de Computadores. 
+Focamos no desenvolvimento e simulação de um sistema que demonstra a integração entre sensores e dispositivos de saída, mostrando como a comunicação entre hardware e software é essencial para sistemas computacionais modernos.
 ## Objetivos
 - Compreender o funcionamento dos dispositivos de Entrada e Saída (I/O).
 - Desenvolver um protótipo utilizando sensores (entrada) e displays/LEDs (saída).
