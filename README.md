@@ -40,8 +40,23 @@ Focamos no desenvolvimento e simulação de um sistema que demonstra a integraç
   <img src="imagens/esquema_ligacao.png" alt="Esquema de ligação">
 </details>
 
-## Autores
-- **Edmar Pereira** - Implementação do sistema e desenvolvimento do código.
-- **Ronyldo** - Montagem do circuito e testes no Tinkercad.
+<details>
+  <summary><strong>Demonstração</strong></summary>
+  <h4>Esquema de Montagem</h4>
+  <img src="imagens/esquema.png" alt="Esquema">
 
-Professor responsável: **Moisés** - Disciplina de Organização de Computadores no IFRN.
+  <h4>Resultado da Simulação</h4>
+  O display LCD exibirá mensagens de acordo com a leitura dos sensores. Os LEDs acenderão em resposta a determinadas entradas, demonstrando o conceito de I/O em sistemas de computadores.
+</details>
+
+<details>
+  <summary><strong>Explicação Técnica</strong></summary>
+  <p>O sistema utiliza sensores (PIR e temperatura) como dispositivos de entrada. O Arduino processa os sinais dos sensores e envia comandos para os dispositivos de saída (display LCD, LEDs). O código é responsável por interpretar os dados dos sensores e atualizar as saídas em tempo real.</p>
+
+  <h4>Principais Trechos do Código</h4>
+  ```cpp
+  Wire.requestFrom(8, 1);  // Solicita dados do sensor
+  if (Wire.available()) {
+      int state = Wire.read();
+      lcd1.print("Movimento detectado");
+  }
