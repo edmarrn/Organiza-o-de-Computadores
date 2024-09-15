@@ -3,6 +3,13 @@
 ![Descrição do Projeto](https://github.com/user-attachments/assets/835400cb-497f-4618-891a-5883e915fcac)
 
 <details>
+    <summary>Integrantes</summary>
+        - Edmar Pereira<br>
+        - Ronyldo Marques<br>
+    Professor(a) Moisés Cirilo de Brito Souto
+</details>
+
+<details>
 <summary>Descrição</summary>
 Este projeto aborda os conceitos de Entrada/Saída (I/O) no contexto da Organização de Computadores. Focamos no desenvolvimento e simulação de um sistema que demonstra a integração entre sensores e dispositivos de saída, mostrando como a comunicação entre hardware e software é essencial para sistemas computacionais modernos.
 </details>
@@ -63,11 +70,22 @@ O Arduino recebe e processa os sinais enviados pelos sensores, analisando os dad
 
 O código implementado é fundamental para a operação do sistema. Ele realiza a leitura contínua dos sensores, interpreta os dados coletados e toma decisões para atualizar os dispositivos de saída de forma eficiente. Esse processo garante a comunicação sincronizada entre entrada e saída, simulando como os sistemas embarcados lidam com múltiplas fontes de dados e interações em um ambiente real.
 </details>
+
 <details>
-<summary>Principais Trechos do Código</summary>
-Wire.requestFrom(8, 1);  // Solicita dados do sensor
-if (Wire.available()) {
-    int state = Wire.read();
-    lcd1.print("Movimento detectado");
-}
+<summary>Principais Trechos do Código</summary><br>
+    Abaixo está alguns exemplos dos códigos: <br>
+
+    código do Arduíno 01<br>
+   ![image](https://github.com/user-attachments/assets/e4756547-4154-408f-a70a-67e458e93b50) <br>
+
+   código do Arduíno 02 <br>
+    
+   ![image](https://github.com/user-attachments/assets/13473bc2-5a4b-41e6-a3d1-484e9a5164ce)<br>
+
+
+</details>
+
+<details>
+    <summary>Conclusão</summary>
+    Este projeto foi fundamental para ilustrar o funcionamento de um sistema de Entrada/Saída (I/O) em um ambiente controlado por Arduino. Aprendemos como capturar sinais de sensores e utilizá-los para controlar dispositivos de saída, como LEDs e displays. Embora tenhamos alcançado nossos objetivos, acreditamos que futuras melhorias podem incluir a adição de novos sensores e a implementação de funcionalidades mais complexas, aprofundando ainda mais o estudo da comunicação e interação entre hardware e software.
 </details>
