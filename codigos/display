@@ -1,0 +1,39 @@
+#include <Wire.h>
+#include <Adafruit_LiquidCrystal.h>
+
+Adafruit_LiquidCrystal lcd1(0x20);  // Endereço do display I2C definido como 0x20
+
+void setup() {
+  // Inicializa o display LCD 16x2
+  lcd1.begin(16, 2);
+  Serial.begin(9600);
+  Wire.begin();
+}
+
+void loop() {
+  lcd1.clear();  // Limpa o display LCD
+  
+  // Solicita 1 byte do escravo com endereço 8
+  Wire.requestFrom(8, 1);  
+  if (Wire.available()) {
+    int state = Wire.read();  // Lê o byte enviado pelo escravo
+    if (state == HIGH) {  // Certifique-se de que HIGH é o valor esperado
+      lcd1.setCursor(0, 0);  // Move o cursor para a linha 0, coluna 0
+      lcd1.print("Movimento no A1");
+    }
+  }
+
+  // Aguarda 1500 ms antes de solicitar novamente
+
+  // Solicita 1 byte do escravo com endereço 9
+  Wire.requestFrom(9, 1);
+  if (Wire.available()) {
+    int state = Wire.read();  // Lê o byte enviado pelo escravo
+    if (state == HIGH) {  // Certifique-se de que HIGH é o valor esperado
+      lcd1.setCursor(0, 1);  // Move o cursor para a linha 1, coluna 0
+      lcd1.print("Movimento no A2");
+    }
+  }
+  
+  delay(500);  // Aguarda 1500 ms antes de solicitar novamente
+}
