@@ -1,1 +1,37 @@
+#include <Wire.h>
 
+
+// Definição dos pinos
+const int ledPin = 13; // Pino do LED embutido no Arduino
+int pinToMonitor = 2;
+
+void setup() {
+  // Configuração dos pinos
+  pinMode(pinToMonitor, INPUT);  // Pino do sensor PIR como entrada
+  pinMode(ledPin, OUTPUT); // Pino do LED como saída
+  
+  Wire.begin(8);  // Inicializa o Arduino como escravo com endereço 8
+  Wire.onRequest(requestEvent);  // Configura o evento de pedido do mestre
+}
+
+void loop() {
+  int state = digitalRead(pinToMonitor);  // Lê o estado do pino
+  // Verifica se o sensor detectou movimento
+  if (state == HIGH) {
+	  Serial.println(state);
+    // Acende o LED se houver movimento
+    digitalWrite(ledPin, HIGH);
+    Serial.println("Movimento detectado!");
+  } 
+  else {
+    // Apaga o LED se não houver movimento
+    digitalWrite(ledPin, LOW);
+    //Serial.println("Nenhum movimento.");
+  }
+
+  // Pequeno delay para a próxima leitura
+}
+void requestEvent() {
+  int state = digitalRead(pinToMonitor);  // Lê o estado do pino
+  Wire.write(state);  // Envia o estado para o mestre
+}
